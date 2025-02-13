@@ -7,10 +7,10 @@ from supabase import create_client, Client
 #__________________ URL for uploading the file (Supabase upload URL)
 
 # URL for the file 
-FileURL = "https://wngqbymqpbrcpgtuqetr.supabase.co/storage/v1/object/sign/FOTA_DATA/User_App.bin?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJGT1RBX0RBVEEvVXNlcl9BcHAuYmluIiwiaWF0IjoxNzM0MjA2NjAyLCJleHAiOjE3NjU3NDI2MDJ9.h8ujQF30kVEZJjZVXbX15kaPLr6zi1cYOLVWzoU57zc&t=2024-12-14T20%3A03%3A22.478Z"
+FileURL = "Put Your own file url on SupaBase cloud"
 
 # API KEY
-API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InduZ3FieW1xcGJyY3BndHVxZXRyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNDIwMDM3MiwiZXhwIjoyMDQ5Nzc2MzcyfQ.9hTOd76a0rjjiZOZy8Hb6GKP0JXWCz6qyx4lQtoFgFU"
+API_KEY = "Put Your own API Key"
 
 # Headers for the request
 headers = { "Authorization": API_KEY}
@@ -58,7 +58,9 @@ def download_file():
 def remove_file_from_cloud():
     try:
         # Perform file deletion
-        response = supabase.storage.from_("FOTA_DATA").remove("User_App.bin")
+        response = supabase.storage.from_("FOTA_DATA").remove("User_App.bin") 
+        # FOTA_DATA is the bucket name in your cloud
+        # User_App.bin is the file name in your cloud
 
         # Check response
         if response:
